@@ -1,0 +1,390 @@
+[
+    {
+        "id": "4f0bfec7.8c4098",
+        "type": "tab",
+        "label": "SensorTile Workshop",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a1a038d3.ba895",
+        "type": "debug",
+        "z": "4f0bfec7.8c4098",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 810,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "d337e4b3.5c409",
+        "type": "change",
+        "z": "4f0bfec7.8c4098",
+        "name": "Extract Temperature",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.d.Temperature",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 80,
+        "wires": [
+            [
+                "a1a038d3.ba895"
+            ]
+        ]
+    },
+    {
+        "id": "ad6f309c.052af",
+        "type": "change",
+        "z": "4f0bfec7.8c4098",
+        "name": "Extract Accelerometer X",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.d.X",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "X",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 140,
+        "wires": [
+            [
+                "a1a038d3.ba895"
+            ]
+        ]
+    },
+    {
+        "id": "379479f9.db598e",
+        "type": "change",
+        "z": "4f0bfec7.8c4098",
+        "name": "Extract Accelerometer Y",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.d.Y",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Y",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 180,
+        "wires": [
+            [
+                "a1a038d3.ba895"
+            ]
+        ]
+    },
+    {
+        "id": "370cf16b.cdaaae",
+        "type": "change",
+        "z": "4f0bfec7.8c4098",
+        "name": "Extract Accelerometer Z",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.d.Z",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Z",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 220,
+        "wires": [
+            [
+                "a1a038d3.ba895"
+            ]
+        ]
+    },
+    {
+        "id": "2a407ab.c442606",
+        "type": "switch",
+        "z": "4f0bfec7.8c4098",
+        "name": "SensorTile Event Types",
+        "property": "eventType",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Temperature",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Accelerometer",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Mic_Level",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Gesture",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 4,
+        "x": 270,
+        "y": 180,
+        "wires": [
+            [
+                "d337e4b3.5c409"
+            ],
+            [
+                "ad6f309c.052af",
+                "379479f9.db598e",
+                "370cf16b.cdaaae"
+            ],
+            [
+                "da1f71fb.946ce8"
+            ],
+            [
+                "76c479eb.675ea8"
+            ]
+        ]
+    },
+    {
+        "id": "da1f71fb.946ce8",
+        "type": "change",
+        "z": "4f0bfec7.8c4098",
+        "name": "Extract Microphone level",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.d.Mic",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 280,
+        "wires": [
+            [
+                "a1a038d3.ba895"
+            ]
+        ]
+    },
+    {
+        "id": "6cd2b1c4.477088",
+        "type": "ibmiot in",
+        "z": "4f0bfec7.8c4098",
+        "authentication": "apiKey",
+        "apiKey": "27705d00.908dfc",
+        "inputType": "evt",
+        "deviceId": "C07A2E305C4D",
+        "applicationId": "",
+        "deviceType": "+",
+        "eventType": "+",
+        "commandType": "",
+        "format": "json",
+        "name": "IBM IoT",
+        "service": "registered",
+        "allDevices": "",
+        "allApplications": "",
+        "allDeviceTypes": true,
+        "allEvents": true,
+        "allCommands": "",
+        "allFormats": "",
+        "qos": 0,
+        "x": 70,
+        "y": 180,
+        "wires": [
+            [
+                "9234509.12a573",
+                "2a407ab.c442606"
+            ]
+        ]
+    },
+    {
+        "id": "563dca9a.d309bc",
+        "type": "comment",
+        "z": "4f0bfec7.8c4098",
+        "name": "WIoTP via API keys",
+        "info": "",
+        "x": 110,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "9234509.12a573",
+        "type": "debug",
+        "z": "4f0bfec7.8c4098",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "true",
+        "x": 210,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "76c479eb.675ea8",
+        "type": "change",
+        "z": "4f0bfec7.8c4098",
+        "name": "Extract Gestures",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.d.Gesture",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 550,
+        "y": 380,
+        "wires": [
+            [
+                "f2bdf567.60a828",
+                "6b33020c.846b34"
+            ]
+        ]
+    },
+    {
+        "id": "f2bdf567.60a828",
+        "type": "debug",
+        "z": "4f0bfec7.8c4098",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 790,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "6b33020c.846b34",
+        "type": "ui_chart",
+        "z": "4f0bfec7.8c4098",
+        "name": "",
+        "group": "3d5f1e35.d7f2b2",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Gesture",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "x": 780,
+        "y": 380,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "27705d00.908dfc",
+        "type": "ibmiot",
+        "z": "",
+        "name": "",
+        "keepalive": "60",
+        "serverName": "",
+        "cleansession": true,
+        "appId": "",
+        "shared": false
+    },
+    {
+        "id": "3d5f1e35.d7f2b2",
+        "type": "ui_group",
+        "z": "",
+        "name": "SensorTile Workshop",
+        "tab": "6a4c41b.d237ac",
+        "order": 1,
+        "disp": true,
+        "width": "15"
+    },
+    {
+        "id": "6a4c41b.d237ac",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Workshop",
+        "icon": "dashboard",
+        "order": 1
+    }
+]
