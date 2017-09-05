@@ -229,7 +229,7 @@
         "type": "ibmiot in",
         "z": "4f0bfec7.8c4098",
         "authentication": "apiKey",
-        "apiKey": "27705d00.908dfc",
+        "apiKey": "a-29bbgl-wbvluztjur",
         "inputType": "evt",
         "deviceId": "C07A2E305C4D",
         "applicationId": "",
