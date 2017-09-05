@@ -1,15 +1,15 @@
 [
     {
-        "id": "429c92be.2e8d64",
+        "id": "c3af477f.fa16b8",
         "type": "tab",
         "label": "SensorTile Master Dashboard",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "540083bc.2ba304",
+        "id": "a1331468.ef5818",
         "type": "change",
-        "z": "429c92be.2e8d64",
+        "z": "c3af477f.fa16b8",
         "name": "Extract Temperature",
         "rules": [
             {
@@ -29,16 +29,16 @@
         "y": 83,
         "wires": [
             [
-                "4c74e94f.66425"
+                "8a204f10.f04c88"
             ]
         ]
     },
     {
-        "id": "4c74e94f.66425",
+        "id": "8a204f10.f04c88",
         "type": "ui_chart",
-        "z": "429c92be.2e8d64",
+        "z": "c3af477f.fa16b8",
         "name": "",
-        "group": "ca64e0ac.2f9c88",
+        "group": "3b631479.3443d4",
         "order": 0,
         "width": 0,
         "height": 0,
@@ -75,9 +75,9 @@
         ]
     },
     {
-        "id": "49299770.330a5",
+        "id": "2d851df0.fb591a",
         "type": "change",
-        "z": "429c92be.2e8d64",
+        "z": "c3af477f.fa16b8",
         "name": "Extract Accelerometer X",
         "rules": [
             {
@@ -104,14 +104,14 @@
         "y": 143,
         "wires": [
             [
-                "a333660b.ebd12"
+                "55571092.81a3b8"
             ]
         ]
     },
     {
-        "id": "8fb84479.d77f9",
+        "id": "fb36cd8f.38e188",
         "type": "change",
-        "z": "429c92be.2e8d64",
+        "z": "c3af477f.fa16b8",
         "name": "Extract Accelerometer Y",
         "rules": [
             {
@@ -138,14 +138,14 @@
         "y": 183,
         "wires": [
             [
-                "a333660b.ebd12"
+                "55571092.81a3b8"
             ]
         ]
     },
     {
-        "id": "4fe5bc36.4d274c",
+        "id": "c3a3e2d2.248938",
         "type": "change",
-        "z": "429c92be.2e8d64",
+        "z": "c3af477f.fa16b8",
         "name": "Extract Accelerometer Z",
         "rules": [
             {
@@ -172,14 +172,14 @@
         "y": 223,
         "wires": [
             [
-                "a333660b.ebd12"
+                "55571092.81a3b8"
             ]
         ]
     },
     {
-        "id": "f4b7ab74.024cd8",
+        "id": "819a820e.ff8e5",
         "type": "switch",
-        "z": "429c92be.2e8d64",
+        "z": "c3af477f.fa16b8",
         "name": "SensorTile Event Types",
         "property": "eventType",
         "propertyType": "msg",
@@ -211,27 +211,27 @@
         "y": 183,
         "wires": [
             [
-                "540083bc.2ba304"
+                "a1331468.ef5818"
             ],
             [
-                "49299770.330a5",
-                "8fb84479.d77f9",
-                "4fe5bc36.4d274c"
+                "2d851df0.fb591a",
+                "fb36cd8f.38e188",
+                "c3a3e2d2.248938"
             ],
             [
-                "9d061aa3.6abe"
+                "daae7dd6.2e8e4"
             ],
             [
-                "8977d72a.532568"
+                "d4f826e2.045f8"
             ]
         ]
     },
     {
-        "id": "a333660b.ebd12",
+        "id": "55571092.81a3b8",
         "type": "ui_chart",
-        "z": "429c92be.2e8d64",
+        "z": "c3af477f.fa16b8",
         "name": "",
-        "group": "ca64e0ac.2f9c88",
+        "group": "3b631479.3443d4",
         "order": 0,
         "width": 0,
         "height": 0,
@@ -268,9 +268,9 @@
         ]
     },
     {
-        "id": "9d061aa3.6abe",
+        "id": "daae7dd6.2e8e4",
         "type": "change",
-        "z": "429c92be.2e8d64",
+        "z": "c3af477f.fa16b8",
         "name": "Extract Microphone level",
         "rules": [
             {
@@ -290,16 +290,16 @@
         "y": 283,
         "wires": [
             [
-                "2e2b78c8.a87d5"
+                "40f944e9.0e9684"
             ]
         ]
     },
     {
-        "id": "2e2b78c8.a87d5",
+        "id": "40f944e9.0e9684",
         "type": "ui_chart",
-        "z": "429c92be.2e8d64",
+        "z": "c3af477f.fa16b8",
         "name": "",
-        "group": "ca64e0ac.2f9c88",
+        "group": "3b631479.3443d4",
         "order": 0,
         "width": 0,
         "height": 0,
@@ -336,9 +336,9 @@
         ]
     },
     {
-        "id": "ba29b9b3.f7fae8",
+        "id": "f96cc36c.9e75c8",
         "type": "ibmiot in",
-        "z": "429c92be.2e8d64",
+        "z": "c3af477f.fa16b8",
         "authentication": "apiKey",
         "apiKey": "a-29bbgl-wbvluztjur",
         "inputType": "evt",
@@ -358,40 +358,39 @@
         "allFormats": "",
         "qos": 0,
         "x": 70,
-        "y": 183,
+        "y": 100,
         "wires": [
             [
-                "4d9168f1.a0b058",
-                "f4b7ab74.024cd8"
+                "2625c070.6d8758"
             ]
         ]
     },
     {
-        "id": "2ab4efba.8c378",
+        "id": "665719a7.950ce8",
         "type": "comment",
-        "z": "429c92be.2e8d64",
+        "z": "c3af477f.fa16b8",
         "name": "WIoTP via API keys",
         "info": "Registered Device",
-        "x": 110,
-        "y": 123,
+        "x": 116,
+        "y": 52,
         "wires": []
     },
     {
-        "id": "4d9168f1.a0b058",
+        "id": "4a331fe.cb0806",
         "type": "debug",
-        "z": "429c92be.2e8d64",
+        "z": "c3af477f.fa16b8",
         "name": "",
         "active": true,
         "console": "false",
         "complete": "true",
-        "x": 210,
-        "y": 283,
+        "x": 290,
+        "y": 280,
         "wires": []
     },
     {
-        "id": "8977d72a.532568",
+        "id": "d4f826e2.045f8",
         "type": "change",
-        "z": "429c92be.2e8d64",
+        "z": "c3af477f.fa16b8",
         "name": "Extract Gestures",
         "rules": [
             {
@@ -411,15 +410,15 @@
         "y": 383,
         "wires": [
             [
-                "d1462e70.e7faf",
-                "229f4d4d.9080aa"
+                "cbd65f41.75019",
+                "64f25643.a58a98"
             ]
         ]
     },
     {
-        "id": "d1462e70.e7faf",
+        "id": "cbd65f41.75019",
         "type": "debug",
-        "z": "429c92be.2e8d64",
+        "z": "c3af477f.fa16b8",
         "name": "",
         "active": true,
         "console": "false",
@@ -429,11 +428,11 @@
         "wires": []
     },
     {
-        "id": "229f4d4d.9080aa",
+        "id": "64f25643.a58a98",
         "type": "ui_chart",
-        "z": "429c92be.2e8d64",
+        "z": "c3af477f.fa16b8",
         "name": "",
-        "group": "ca64e0ac.2f9c88",
+        "group": "3b631479.3443d4",
         "order": 0,
         "width": 0,
         "height": 0,
@@ -470,16 +469,40 @@
         ]
     },
     {
-        "id": "ca64e0ac.2f9c88",
+        "id": "2625c070.6d8758",
+        "type": "delay",
+        "z": "c3af477f.fa16b8",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 110,
+        "y": 280,
+        "wires": [
+            [
+                "4a331fe.cb0806",
+                "819a820e.ff8e5"
+            ]
+        ]
+    },
+    {
+        "id": "3b631479.3443d4",
         "type": "ui_group",
         "z": "",
         "name": "SensorTile Data",
-        "tab": "2aa867d1.7a2d18",
+        "tab": "a2b8b359.0e8b38",
         "disp": true,
         "width": "6"
     },
     {
-        "id": "2aa867d1.7a2d18",
+        "id": "a2b8b359.0e8b38",
         "type": "ui_tab",
         "z": "",
         "name": "Sensor Tiles",
